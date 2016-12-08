@@ -2,10 +2,17 @@
 
 const express = require('express');
 const multer = require('multer');
+const mkdirp = require('mkdirp');
+
+mkdirp('./tmp/user-upload', (err) => {
+  if (err) {
+    console.log(err);
+  }
+});
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, './tmp');
+    cb(null, './tmp/user-upload');
   }
 });
 
