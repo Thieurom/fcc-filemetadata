@@ -1,0 +1,37 @@
+<!doctype>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>File Metadata Microservice</title>
+    <meta name="description" content="file-metadata-microservice">
+    <meta name="author" content="doanthieu">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:300">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <div class="app">
+
+      <header class="header">
+        <h1 class="h1">File Metadata Microservice</h1>
+      </header>
+
+      <main class="main">
+        <div class="wrapper">
+          <h2 class="h2">Add your file</h2>
+
+          <form enctype="multipart/form-data" method="POST" action="/" class="form">
+            <label for="file" class="form__label"></label>
+            <input type="file" name="file" required="required" data-max-size="204800" id="file" class="form__input"/>
+
+            <p class="subheading">Click to add file</p><span class="progress-bar"></span>
+
+            <input type="submit" value="Submit" class="form__submit"/>
+          </form>
+        </div>
+      </main>
+
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
