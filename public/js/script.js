@@ -19,11 +19,11 @@
     e.preventDefault();
 
     // Validate file size before uploading to server
-    // if (formInput.files[0].size > maxSize) {
-    //   var fileName = document.querySelector('.subheading');
-    //   fileName.textContent = 'File size must be equal or less than 200KB';
-    //   return;
-    // }
+    if (formInput.files[0].size > maxSize) {
+      var fileName = document.querySelector('.subheading');
+      fileName.textContent = 'File size must be equal or less than 200KB';
+      return;
+    }
 
     formSubmit.value = 'Uploading ...';
     formSubmit.setAttribute('disabled', true);

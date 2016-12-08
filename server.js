@@ -2,10 +2,13 @@
 
 const express = require('express');
 const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 const main = require('./routes/main');
 
 const PORT = process.env.PORT || 3000;
 const SECRET = process.env.SECRET || 'very secret string';
+const DATABASE = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/data';
+
 const app = express();
 
 
@@ -13,7 +16,8 @@ const app = express();
 app.use(session({
   secret: SECRET,
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
+  store: new MongoStore({ url: DATABASE })
 }));
 
 // Serve static files
